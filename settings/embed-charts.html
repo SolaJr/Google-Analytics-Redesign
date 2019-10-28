@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<!--  This site was created in Webflow. http://www.webflow.com  -->
+<!--  Last Published: Mon Oct 28 2019 15:24:16 GMT+0000 (UTC)  -->
+<html data-wf-page="5db707b8c0d9b4250c0f1995" data-wf-site="5db707b7c0d9b453e90f197a" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Embed Charts</title>
+  <meta content="Embed Charts" property="og:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="../css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="../css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="../css/analyticsredesign.webflow.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Roboto:300,regular,500,700"]  }});</script>
+  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="../images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="../images/webclip.png" rel="apple-touch-icon">
+  <style type="text/css">
+/* Custom Tooltip Styling */
+a[data-tooltip]:link,
+a[data-tooltip]:visited {
+  position: relative;
+}
+a[data-tooltip] span.tooltip {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  margin-left: -48px;
+  width: 96px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  visibility: hidden;
+  z-index: 999;
+}
+a[data-tooltip]:hover span.tooltip {
+  visibility: visible;
+  transition: visibility 0s linear .3s;
+}
+/* Long Text Ellipse  */
+.ellipsis,
+.two-line,
+.table-row,
+.drawer-navlink
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: auto;
+}
+/* center navbar icons fix */
+.icon,
+.list-icon,
+.sidebar-icon {vertical-align: top;}
+</style>
+</head>
+<body class="gray-bg">
+  <nav>
+    <div data-collapse="all" data-animation="over-left" data-duration="400" data-doc-height="1" data-easing="ease-out" data-easing2="ease-out" class="navbar w-nav">
+      <div class="app-bar colorprimary w-clearfix">
+        <div class="menu-button w-hidden-main w-nav-button">
+          <div class="w-icon-nav-menu"></div>
+        </div><a href="#" class="dashboardlogo w-nav-brand"></a>
+        <nav role="navigation" class="nav-menu w-nav-menu"><a href="../index.html" class="nav-link w-nav-link">Overview</a><a href="../sales-dashboard.html" class="nav-link w-nav-link">Sales Metrics</a><a href="../dashboard.html" class="nav-link w-nav-link">Dashboard</a><a href="../projects.html" class="nav-link w-nav-link">Projects</a><a href="../news.html" class="nav-link w-nav-link">News</a><a href="../team-v2.html" class="nav-link w-nav-link">Team</a><a href="../settings/settings.html" class="nav-link w-nav-link">Settings</a><a href="../settings/embed-charts.html" class="nav-link w-nav-link w--current">Docs &amp; How-To</a></nav>
+        <div class="app-bar-menu2"><a href="#" data-ix="show-appbar-searchfield" class="menu-iconbutton dark w-hidden-tiny w-button"><span class="button-icon"></span></a><input type="text" id="Search-Field" name="Search-Field" maxlength="256" data-name="Search Field" class="searchfield w-input"><a href="#" data-ix="show-hide-mobidash-menu" class="menu-iconbutton dark w-button"><span class="button-icon"></span></a></div>
+      </div>
+    </div>
+  </nav>
+  <div class="full-height w-row">
+    <div class="nav-sidebar-column w-hidden-medium w-hidden-small w-hidden-tiny w-col w-col-2 w-col-stack">
+      <ul class="list w-list-unstyled">
+        <li class="drawer-item">
+          <a href="../index.html" class="drawer-navlink w-inline-block">
+            <div class="sidebar-nav-link"><em class="sidebar-icon"></em>Overview</div>
+          </a>
+        </li>
+        <li class="drawer-item">
+          <a href="../sales-dashboard.html" class="drawer-navlink w-inline-block">
+            <div class="sidebar-nav-link"><em class="sidebar-icon"></em>Sales Metrics</div>
+          </a>
+        </li>
+        <li class="drawer-item">
+          <a href="../dashboard.html" class="drawer-navlink w-inline-block">
+            <div class="sidebar-nav-link"><em class="sidebar-icon"></em>Dashboard</div>
+          </a>
+        </li>
+        <li class="drawer-item w-hidden-main w-hidden-medium w-hidden-small w-hidden-tiny">
+          <a href="../news.html" class="drawer-navlink w-inline-block">
+            <div class="sidebar-nav-link"><em class="sidebar-icon"></em>News</div>
+          </a>
+        </li>
+        <li class="drawer-item">
+          <a href="../projects.html" class="drawer-navlink w-inline-block">
+            <div class="sidebar-nav-link"><em class="sidebar-icon"></em>Projects</div>
+          </a>
+        </li>
+        <li class="drawer-item">
+          <a href="../team-v2.html" class="drawer-navlink w-inline-block">
+            <div class="sidebar-nav-link"><em class="sidebar-icon"></em>Team</div>
+          </a>
+        </li>
+        <li class="drawer-item">
+          <div class="divider-menu"></div>
+        </li>
+        <li class="drawer-item">
+          <a href="../settings/settings.html" class="drawer-navlink w-inline-block">
+            <div class="sidebar-nav-link"><em class="sidebar-icon"></em>Settings</div>
+          </a>
+        </li>
+        <li class="drawer-item">
+          <a href="../settings/embed-charts.html" class="drawer-navlink w-inline-block w--current">
+            <div class="sidebar-nav-link"><em class="sidebar-icon"></em>How-To</div>
+          </a>
+        </li>
+        <li class="drawer-item">
+          <a href="../news.html" class="drawer-navlink w-inline-block">
+            <div class="sidebar-nav-link">About this project</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="content-canvas inner-shadow w-col w-col-10 w-col-stack">
+      <div class="content-full-height submenu w-row">
+        <div class="column-list subnav w-col w-col-3 w-col-stack">
+          <ul class="subnav-list w-list-unstyled">
+            <li class="subnav-stack">
+              <a href="#googleCharts" class="subnav-item w-inline-block">
+                <h5 class="subnav-text">Google Charts</h5>
+              </a>
+            </li>
+            <li class="subnav-stack">
+              <a href="#databindKO" class="subnav-item w-inline-block">
+                <h5 class="subnav-text">KnockOut Data Binding</h5>
+              </a>
+            </li>
+            <li class="subnav-stack">
+              <a href="#databindNG" class="subnav-item w-inline-block">
+                <h5 class="subnav-text">AngularJS Data Binding</h5>
+              </a>
+            </li>
+            <li class="subnav-stack">
+              <a href="#dataTables" class="subnav-item w-inline-block">
+                <h5 class="subnav-text">Data Tables</h5>
+              </a>
+            </li>
+            <li class="subnav-stack">
+              <a href="#polymerElements" class="subnav-item w-inline-block">
+                <h5 class="subnav-text">Polymer Elements</h5>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="w-col w-col-9 w-col-stack">
+          <div class="content-full-height">
+            <div class="mb25 w-container">
+              <h4 class="subpage-header">Chart Embedding (Examples &amp; How-To)</h4>
+              <h5 id="googleCharts" class="content-subheader">01. Google Charts (sheets embed link)</h5>
+              <div class="content-grid w-row">
+                <div class="w-col w-col-4">
+                  <div class="cards2-item">
+                    <div class="embed-chart line w-embed"><img src="https://docs.google.com/spreadsheets/d/1yrM9N_XOA378lrjHr1vhICA7j1132rJCvU7A6Dii5I4/pubchart?oid=1341505548&format=image"></div>
+                    <div class="cards-item-whitespace">
+                      <h5 class="cards-item-title">Line Chart</h5>
+                      <p class="cards-subtext">This is a custom styled google chart.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-col w-col-4">
+                  <div class="cards2-item">
+                    <div class="cards-item-whitespace">
+                      <div class="embed-chart pie w-embed"><img src="https://docs.google.com/spreadsheets/d/1yrM9N_XOA378lrjHr1vhICA7j1132rJCvU7A6Dii5I4/pubchart?oid=863268266&format=image"></div>
+                      <h5 class="cards-item-title">Pie / Donut Chart</h5>
+                      <p class="cards-subtext">This chart is directly embedded from Google Sheets.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-col w-col-4">
+                  <div class="cards2-item">
+                    <div class="cards-item-whitespace">
+                      <div class="embed-chart pie w-embed"><img src="https://docs.google.com/spreadsheets/d/1yrM9N_XOA378lrjHr1vhICA7j1132rJCvU7A6Dii5I4/pubchart?oid=2019821934&format=image"></div>
+                      <h5 class="cards-item-title">Gauge</h5>
+                      <h6 class="cards-subtitle">Google Sheets</h6>
+                      <p class="cards-subtext">This gauge chart is an externally linked image from google sheets that gets automatically updated.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h5 id="databindKO" class="content-subheader">02. Json Data Bind (knockoutjs)</h5>
+              <div id="koExample" class="content-grid w-row">
+                <div class="w-col w-col-4">
+                  <div class="cards2-item item-whitespace">
+                    <h5 class="cards-item-title">Clicks</h5>
+                    <h3 data-bind="text: value1" class="cards-item-value">155,200</h3>
+                  </div>
+                </div>
+                <div class="w-col w-col-4">
+                  <div class="cards2-item item-whitespace">
+                    <h5 class="cards-item-title">Total Views</h5>
+                    <h3 data-bind="text: value2" class="cards-item-value">-</h3>
+                  </div>
+                </div>
+                <div class="w-col w-col-4">
+                  <div class="cards2-item item-whitespace">
+                    <h5 class="cards-item-title">Conversion Rate</h5>
+                    <h3 data-bind="text: value3, style:{color: color3}" class="cards-item-value">1.5%</h3>
+                  </div>
+                </div>
+              </div>
+              <h5 id="databindNG" class="content-subheader">03. Angular Data Bind (angularjs)</h5>
+              <div id="koExample" class="content-grid w-row">
+                <div class="w-col w-col-4">
+                  <div class="cards2-item item-whitespace">
+                    <h5 class="cards-item-title">Clicks</h5>
+                    <h3 ng-data="text: value1" class="cards-item-value">155,200</h3>
+                  </div>
+                </div>
+                <div class="w-col w-col-4">
+                  <div class="cards2-item item-whitespace">
+                    <h5 class="cards-item-title">Total Views</h5>
+                    <h3 bg-data="text: value2" class="cards-item-value">-</h3>
+                  </div>
+                </div>
+                <div class="w-col w-col-4">
+                  <div class="cards2-item item-whitespace">
+                    <h5 class="cards-item-title">Conversion Rate</h5>
+                    <h3 ng-data="text: value3, style:{color: color3}" class="cards-item-value">1.5%</h3>
+                  </div>
+                </div>
+              </div>
+              <h5 id="dataTables" class="content-subheader">04. Data Tables</h5>
+              <div class="cards2-item">
+                <div class="cards-header">
+                  <h5 class="cards-title">Table (embed code)</h5>
+                </div>
+                <div class="embed w-embed">
+                  <table class="table">
+                    <thead class="table-header">
+                      <th>Material</th>
+                      <th>Quantity</th>
+                      <th>Unit price</th>
+                    </thead>
+                    <tbody>
+                      <tr class="table-row">
+                        <td>Acrylic (Transparent)</td>
+                        <td>25</td>
+                        <td>$2.90</td>
+                      </tr>
+                      <tr class="table-row">
+                        <td>Plywood (Birch)</td>
+                        <td>50</td>
+                        <td>$1.25</td>
+                      </tr>
+                      <tr class="table-row">
+                        <td>Laminate (Gold on Blue)</td>
+                        <td>10</td>
+                        <td>$2.35</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <h5 id="polymerElements" class="content-subheader">05. Polymer Elements</h5>
+              <div class="cards2-item cards-item-whitespace">
+                <h5 class="cards-title">todo...</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div data-ix="hide-mobidash-menu" class="mobidash-appbar-menu">
+    <ul class="menu appbar-right w-list-unstyled">
+      <li>
+        <a href="../login.html" class="menu-action w-inline-block">
+          <div class="drawer-nav-link">Logout</div>
+        </a>
+      </li>
+      <li>
+        <a href="../settings/settings.html" class="menu-action w-inline-block">
+          <div class="drawer-nav-link">Settings</div>
+        </a>
+        <a href="../settings/embed-charts.html" class="menu-action w-inline-block w--current">
+          <div class="drawer-nav-link">Help &amp; About</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="../js/webflow.js" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <!--  load external scripts & codepens  -->
+  <!--  Tooltips  -->
+  <script src="http://codepen.io/thinking-twins/pen/VvJLxB.js"></script>
+  <!--  Floating Textfield Label  -->
+  <script src="http://codepen.io/thinking-twins/pen/bEoEGM.js"></script>
+  <!--  Material Design Ripple Effect  -->
+  <script src="http://codepen.io/thinking-twins/pen/zrppoe.js"></script>
+  <!--  Google JS API for google charts  -->
+  <script src="https://google.com/jsapi"></script>
+  <!--  Knockout JS for databinding examples  -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+  <!--  Example 02 (Json Knockout Binding)  -->
+  <script src="http://codepen.io/thinking-twins/pen/MKEKKR.js"></script>
+</body>
+</html>
